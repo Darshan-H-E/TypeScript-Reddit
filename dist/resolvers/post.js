@@ -44,7 +44,7 @@ let PostResolver = class PostResolver {
             if (!post) {
                 return null;
             }
-            if (typeof title !== 'undefined') {
+            if (typeof title !== "undefined") {
                 post.title = title;
                 yield em.persistAndFlush(post);
             }
@@ -72,15 +72,14 @@ __decorate([
 ], PostResolver.prototype, "posts", null);
 __decorate([
     type_graphql_1.Query(() => Post_1.Post, { nullable: true }),
-    __param(0, type_graphql_1.Arg('id')),
-    __param(1, type_graphql_1.Ctx()),
+    __param(0, type_graphql_1.Arg("id")), __param(1, type_graphql_1.Ctx()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, Object]),
     __metadata("design:returntype", Promise)
 ], PostResolver.prototype, "post", null);
 __decorate([
     type_graphql_1.Mutation(() => Post_1.Post),
-    __param(0, type_graphql_1.Arg('title')),
+    __param(0, type_graphql_1.Arg("title")),
     __param(1, type_graphql_1.Ctx()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, Object]),
@@ -88,8 +87,8 @@ __decorate([
 ], PostResolver.prototype, "createPost", null);
 __decorate([
     type_graphql_1.Mutation(() => Post_1.Post, { nullable: true }),
-    __param(0, type_graphql_1.Arg('id')),
-    __param(1, type_graphql_1.Arg('title', () => String, { nullable: true })),
+    __param(0, type_graphql_1.Arg("id")),
+    __param(1, type_graphql_1.Arg("title", () => String, { nullable: true })),
     __param(2, type_graphql_1.Ctx()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, String, Object]),
@@ -97,7 +96,7 @@ __decorate([
 ], PostResolver.prototype, "updatePost", null);
 __decorate([
     type_graphql_1.Mutation(() => Boolean),
-    __param(0, type_graphql_1.Arg('id')),
+    __param(0, type_graphql_1.Arg("id")),
     __param(1, type_graphql_1.Ctx()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, Object]),
