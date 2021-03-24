@@ -23,6 +23,7 @@ class usernamePasswordInput {
 class FieldError {
   @Field()
   field: string;
+  @Field()
   message: string;
 }
 
@@ -36,7 +37,7 @@ class UserResponse {
 }
 
 @Resolver()
-export class userResolver {
+export class UserResolver {
   @Mutation(() => User)
   async register(
     @Arg("options") options: usernamePasswordInput,

@@ -24,7 +24,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userResolver = void 0;
+exports.UserResolver = void 0;
 const User_1 = require("../entities/User");
 const type_graphql_1 = require("type-graphql");
 const argon2_1 = __importDefault(require("argon2"));
@@ -47,6 +47,10 @@ __decorate([
     type_graphql_1.Field(),
     __metadata("design:type", String)
 ], FieldError.prototype, "field", void 0);
+__decorate([
+    type_graphql_1.Field(),
+    __metadata("design:type", String)
+], FieldError.prototype, "message", void 0);
 FieldError = __decorate([
     type_graphql_1.ObjectType()
 ], FieldError);
@@ -63,7 +67,7 @@ __decorate([
 UserResponse = __decorate([
     type_graphql_1.ObjectType()
 ], UserResponse);
-let userResolver = class userResolver {
+let UserResolver = class UserResolver {
     register(options, { em }) {
         return __awaiter(this, void 0, void 0, function* () {
             const hashedPassword = yield argon2_1.default.hash(options.password);
@@ -110,7 +114,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [usernamePasswordInput, Object]),
     __metadata("design:returntype", Promise)
-], userResolver.prototype, "register", null);
+], UserResolver.prototype, "register", null);
 __decorate([
     type_graphql_1.Mutation(() => UserResponse),
     __param(0, type_graphql_1.Arg("options")),
@@ -118,9 +122,9 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [usernamePasswordInput, Object]),
     __metadata("design:returntype", Promise)
-], userResolver.prototype, "login", null);
-userResolver = __decorate([
+], UserResolver.prototype, "login", null);
+UserResolver = __decorate([
     type_graphql_1.Resolver()
-], userResolver);
-exports.userResolver = userResolver;
+], UserResolver);
+exports.UserResolver = UserResolver;
 //# sourceMappingURL=user.js.map
